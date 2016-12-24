@@ -4,9 +4,9 @@
 	<title> B1b Schermen Timaflu </title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/dataTables.css"/>
-	<script type="text/javascript" src="jquery-2.2.4.js"></script>
-	<script type="text/javascript" src="dataTables.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/datatables.css"/>
+	<script type="text/javascript" src="js/jquery-2.2.4.js"></script>
+	<script type="text/javascript" src="js/datatables.js"></script>
 	<script src='js/search.js'></script>
 	<script>
 		$(document).ready( function () {

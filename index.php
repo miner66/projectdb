@@ -5,8 +5,8 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/dataTables.css"/>
-	<script type="text/javascript" src="js/jquery-2.2.4.js"></script>
-	<script type="text/javascript" src="js/dataTables.js"></script>
+	<script type="text/javascript" src="jquery-2.2.4.js"></script>
+	<script type="text/javascript" src="dataTables.js"></script>
 	<script src='js/search.js'></script>
 	<script>
 		$(document).ready( function () {

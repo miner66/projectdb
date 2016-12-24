@@ -4,9 +4,9 @@
 	<title> B1b Schermen Timaflu </title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/dataTables.css"/>
+	<link rel="stylesheet" type="text/css" href="css/datatables.css"/>
 	<script type="text/javascript" src="js/jquery-2.2.4.js"></script>
-	<script type="text/javascript" src="js/dataTables.js"></script>
+	<script type="text/javascript" src="js/datatables.js"></script>
 	<script src='js/search.js'></script>
 	<script>
 		$(document).ready( function () {
@@ -52,12 +52,12 @@
 			</thead>
 			<tbody>
 				<?php   while($row = $queryResult->fetch_assoc()): ?>
-				<tr><a href='#<?php echo $row['klantid'] ?>'>
+				<tr>
 					<td><?php echo $row['klantid']; ?></td>
 					<td><?php echo $row['naam']; ?></td>
 					<td><?php echo $row['jaaromzet']; ?></td>
 					<td><?php echo $row['percentage']; ?></td>
-				</a></tr>
+				</tr>
 				<?php endwhile;?>
 			</tbody>
 		</table>

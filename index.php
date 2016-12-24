@@ -52,12 +52,12 @@
 			</thead>
 			<tbody>
 				<?php   while($row = $queryResult->fetch_assoc()): ?>
-				<tr><a href='#<?php echo $row['klantid'] ?>'>
+				<tr>
 					<td><?php echo $row['klantid']; ?></td>
 					<td><?php echo $row['naam']; ?></td>
 					<td><?php echo $row['jaaromzet']; ?></td>
 					<td><?php echo $row['percentage']; ?></td>
-				</a></tr>
+				</tr>
 				<?php endwhile;?>
 			</tbody>
 		</table>

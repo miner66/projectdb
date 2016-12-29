@@ -29,6 +29,7 @@ nav{
 	width: 100%;
 	background-color: #2d2d2d;
 	color: white;
+	font-size: 18px;
 }
 
 nav ul{
@@ -51,23 +52,40 @@ nav ul .botli{
 	height: 41px;
 }
 
-nav ul li:hover ul {
+nav > ul > li:hover > ul {
 	display: block;
 }
 
-nav ul li ul {
+nav > ul > li > ul {
 	position: relative;
 	display: none;
 	color: white;
 	background-color: #2d2d2d;
-	width: 150px;
-	top: -29px;
+	width: 250px;
+	top: -31.5px;
 	left: 190px;
 	border-left: 1px solid #888;
 	border-right: 1px solid #888;
 	box-shadow: 1px 1px 1px 1px #666;
 	z-index: 200;
-	
+}
+
+nav > ul > li > ul > li:hover > ul{
+	display: block;
+}
+
+nav > ul > li > ul > li > ul{
+	position: relative;
+	display: none;
+	color: white;
+	background-color: #2d2d2d;
+	width: 250px;
+	top: -31.5px;
+	left: 240px;
+	border-left: 1px solid #888;
+	border-right: 1px solid #888;
+	box-shadow: 1px 1px 1px 1px #666;
+	z-index: 200;
 }
 
 p {

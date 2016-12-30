@@ -17,32 +17,36 @@
 		} );
 	</script>
 	<?php
-		//vul de query in				
-		$queryResult2 = getQuery(
-				"SELECT klant.naam, COUNT(orderklant.orderid) AS 'aantal'
-				FROM orderklant
-				JOIN klant ON klant.klantid=orderklant.klantid
-				WHERE orderklant.status<>'afgehandeld'
-				GROUP BY klant.naam;"
-		);
-	?>
+			//vul de query in	
+			$queryResult2 = getQuery(
+					"SELECT klant.naam,COUNT(orderklant.orderid) AS 'Aantal'
+					FROM orderklant
+					JOIN klant ON klant.klantid=orderklant.klantid
+					WHERE orderklant.status<>'afgehandeld'
+					GROUP BY klant.naam;"
+			);
+		?>
 	<!-- amCharts javascript sources -->
 		<script src="amcharts/amcharts.js" type="text/javascript"></script>
-		<script src="amcharts/serial.js" type="text/javascript"></script>		
+		<script src="amcharts/serial.js" type="text/javascript"></script>
+		
 
 		<!-- amCharts javascript code -->
 		<script type="text/javascript">
 			AmCharts.makeChart("chartdiv",
 				{
 					"type": "serial",
-					"categoryField": "Naam",
+					"categoryField": "category",
 					"rotate": true,
 					"startDuration": 1,
-					"theme": "light",					
+					"theme": "light",
 					"categoryAxis": {
 						"gridPosition": "start"
 					},
 					"chartCursor": {
+						"enabled": true
+					},
+					"chartScrollbar": {
 						"enabled": true
 					},
 					"trendLines": [],
@@ -53,14 +57,15 @@
 							"tabIndex": -1,
 							"title": "graph 1",
 							"type": "column",
-							"valueField": "Aantal"
+							"valueField": "Openstaande Orders"
 						}
 					],
 					"guides": [],
 					"valueAxes": [
 						{
 							"id": "ValueAxis-1",
-							"title": "Aantal"
+							"title": "",
+							"titleFontSize": 5
 						}
 					],
 					"allLabels": [],
@@ -75,7 +80,7 @@
 					"dataProvider": [
 						<?php while($row2 = $queryResult2->fetch_assoc()): ?>{
 							"Naam": "<?php echo $row2['naam'];?>",
-							"Aantal": "<?php echo $row2['aantal'];?>"
+							"Aantal": <?php echo $row2['Aantal'];?>
 						},<?php endwhile;?>
 					]
 				}

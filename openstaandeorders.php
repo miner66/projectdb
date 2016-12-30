@@ -17,14 +17,15 @@
 		} );
 	</script>
 	<?php
-			//vul de query in				$queryResult2 = getQuery(
-					"SELECT klant.naam, COUNT(orderklant.orderid) AS 'aantal'
-					FROM orderklant
-					JOIN klant ON klant.klantid=orderklant.klantid
-					WHERE orderklant.status<>'afgehandeld'
-					GROUP BY klant.naam;"
-			);
-		?>
+		//vul de query in				
+		$queryResult2 = getQuery(
+				"SELECT klant.naam, COUNT(orderklant.orderid) AS 'aantal'
+				FROM orderklant
+				JOIN klant ON klant.klantid=orderklant.klantid
+				WHERE orderklant.status<>'afgehandeld'
+				GROUP BY klant.naam;"
+		);
+	?>
 	<!-- amCharts javascript sources -->
 		<script src="amcharts/amcharts.js" type="text/javascript"></script>
 		<script src="amcharts/serial.js" type="text/javascript"></script>		
@@ -37,13 +38,11 @@
 					"categoryField": "Naam",
 					"rotate": true,
 					"startDuration": 1,
-					"theme": "light",					"categoryAxis": {
+					"theme": "light",					
+					"categoryAxis": {
 						"gridPosition": "start"
 					},
 					"chartCursor": {
-						"enabled": true
-					},
-					"chartScrollbar": {
 						"enabled": true
 					},
 					"trendLines": [],

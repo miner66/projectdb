@@ -41,7 +41,7 @@
 			AmCharts.makeChart("chartdiv",
 				{
 					"type": "serial",
-					"categoryField": "category",
+					"categoryField": "ProductID",
 					"rotate": true,
 					"startDuration": 1,
 					"theme": "light",
@@ -66,7 +66,7 @@
 					"valueAxes": [
 						{
 							"id": "ValueAxis-1",
-							"title": "",
+							"title": "Winst",
 							"titleFontSize": 5
 						}
 					],
@@ -81,8 +81,8 @@
 					],
 					"dataProvider": [
 						<?php while($row2 = $queryResult2->fetch_assoc()): ?>{
-							"ProductID": "<?php echo $row2['ProductID'];?>",
-							"Winst": "<?php echo $row2['Winst'];?>"
+							"ProductID": "<?php echo $row2['productid'];?>",
+							"Winst": "<?php echo $row2['winst'];?>"
 						},<?php endwhile;?>
 					]
 				}

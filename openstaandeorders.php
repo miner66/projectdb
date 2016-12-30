@@ -80,7 +80,7 @@
 					"dataProvider": [
 						<?php while($row2 = $queryResult2->fetch_assoc()): ?>{
 							"Naam": "<?php echo $row2['naam'];?>",
-							"Aantal": <?php echo $row2['Aantal'];?>
+							"COUNT(orderklant.orderid)": <?php echo $row2['COUNT(orderklant.orderid)'];?>
 						},<?php endwhile;?>
 					]
 				}

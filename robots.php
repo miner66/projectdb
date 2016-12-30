@@ -84,7 +84,7 @@
 		</script>
 </head>
 <body>
-	<header> 
+	<header> w
 		<?php
 			include "include/nav.html"
 		?>
@@ -119,8 +119,7 @@
 			</tbody>
 		</table>
 		<hr>
-		
-		
+		<div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
 	</div>
 </body>
 </html>

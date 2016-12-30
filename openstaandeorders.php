@@ -36,7 +36,7 @@
 			AmCharts.makeChart("chartdiv",
 				{
 					"type": "serial",
-					"categoryField": "category",
+					"categoryField": "Naam",
 					"rotate": true,
 					"startDuration": 1,
 					"theme": "light",
@@ -54,7 +54,7 @@
 							"tabIndex": -1,
 							"title": "graph 1",
 							"type": "column",
-							"valueField": "Openstaande Orders"
+							"valueField": "Aantal"
 						}
 					],
 					"guides": [],

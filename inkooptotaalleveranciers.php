@@ -74,7 +74,7 @@
 					"dataProvider": [
 					<?php while($row2 = $queryResult2->fetch_assoc()): ?>{
 						"Naam": "<?php echo $row2['naam'];?>",
-						"Inkooptotaal": <?php echo $row2['inkooptotaalleveranciers'];?>
+						"Inkooptotaal": <?php echo $row2['inkooptotaalleverancier'];?>
 					},<?php endwhile;?>
 				]
 			}

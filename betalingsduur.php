@@ -19,7 +19,7 @@
 	<?php
 			//vul de query in	
 			$queryResult2 = getQuery(
-					"SELECT klant.klantid, klant.naam, AVG(DATEDIFF(factuur.datumlaatsteactie, orderklant.datumlaatsteactie)) AS 'betalingsduur in dagen'
+					"SELECT klant.klantid, klant.naam, AVG(DATEDIFF(factuur.datumlaatsteactie, orderklant.datumlaatsteactie)) AS 'betalingsduurindagen'
 					FROM orderklant
 					JOIN factuur ON orderklant.orderid=factuur.orderid
 					JOIN klant ON klant.klantid=orderklant.klantid
@@ -54,7 +54,7 @@
 							"id": "AmGraph-1",
 							"title": "graph 1",
 							"type": "column",
-							"valueField": "AVG(DATEDIFF(factuur.datumlaatsteactie, orderklant.datumlaatsteactie))"
+							"valueField": "betalingsduurindagen"
 						}
 					],
 					"guides": [],
@@ -76,7 +76,7 @@
 					"dataProvider": [
 						<?php while($row2 = $queryResult2->fetch_assoc()): ?>{
 							"Naam": "<?php echo $row2['naam'];?>",
-							"Duur": <?php echo $row2['AVG(DATEDIFF(factuur.datumlaatsteactie, orderklant.datumlaatsteactie))'];?>
+							"Duur": <?php echo $row2['betalingsduurindagen'];?>
 						},<?php endwhile;?>
 					]
 				}

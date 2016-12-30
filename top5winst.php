@@ -82,7 +82,7 @@
 					"dataProvider": [
 						<?php while($row2 = $queryResult2->fetch_assoc()): ?>{
 							"ProductID": "<?php echo $row2['ProductID'];?>",
-							"Winst": <?php echo $row2['Winst'];?>
+							"Winst": "<?php echo $row2['Winst'];?>"
 						},<?php endwhile;?>
 					]
 				}

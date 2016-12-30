@@ -112,7 +112,7 @@
 			<tbody>
 				<?php   while($row1 = $queryResult1->fetch_assoc()): ?>
 				<tr>
-					<td><?php echo $row1['prdouctid']; ?></td>
+					<td><?php echo $row1['productid']; ?></td>
 					<td><?php echo $row1['naam']; ?></td>
 					<td><?php echo $row1['aantal']; ?></td>
 				</tr>

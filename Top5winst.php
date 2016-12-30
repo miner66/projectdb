@@ -32,9 +32,8 @@
 			);
 		?>
 	<!-- amCharts javascript sources -->
-		<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-		<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
-		<script type="text/javascript" src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+		<script src="amcharts/amcharts.js" type="text/javascript"></script>
+		<script src="amcharts/serial.js" type="text/javascript"></script>
 		
 
 		<!-- amCharts javascript code -->
@@ -42,7 +41,7 @@
 			AmCharts.makeChart("chartdiv",
 				{
 					"type": "serial",
-					"categoryField": "category",
+					"categoryField": "ProductID",
 					"rotate": true,
 					"startDuration": 1,
 					"theme": "light",
@@ -50,9 +49,6 @@
 						"gridPosition": "start"
 					},
 					"chartCursor": {
-						"enabled": true
-					},
-					"chartScrollbar": {
 						"enabled": true
 					},
 					"trendLines": [],
@@ -88,7 +84,6 @@
 							"ProductID": "<?php echo $row2['ProductID'];?>",
 							"Winst": <?php echo $row2['Winst'];?>
 						},<?php endwhile;?>
-						
 					]
 				}
 			);

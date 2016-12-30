@@ -54,7 +54,7 @@
 							"id": "AmGraph-1",
 							"title": "graph 1",
 							"type": "column",
-							"valueField": "betalingsduur in dagen"
+							"valueField": "AVG(DATEDIFF(factuur.datumlaatsteactie, orderklant.datumlaatsteactie))"
 						}
 					],
 					"guides": [],

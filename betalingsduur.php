@@ -47,9 +47,6 @@
 					"chartCursor": {
 						"enabled": true
 					},
-					"chartScrollbar": {
-						"enabled": true
-					},
 					"trendLines": [],
 					"graphs": [
 						{
@@ -79,7 +76,7 @@
 					"dataProvider": [
 						<?php while($row2 = $queryResult2->fetch_assoc()): ?>{
 							"Naam": "<?php echo $row2['naam'];?>",
-							"Duur": <?php echo $row2['betalingsduur in dagen'];?>
+							"Duur": <?php echo $row2['AVG(DATEDIFF(factuur.datumlaatsteactie, orderklant.datumlaatsteactie))'];?>
 						},<?php endwhile;?>
 					]
 				}
@@ -88,8 +85,6 @@
 </head>
 <body>
 	<header> 
-		<h1> To dodelydo </h1>
-	
 	
 	
 		<?php

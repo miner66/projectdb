@@ -19,7 +19,7 @@
 	<?php
 			//vul de query in	
 			$queryResult2 = getQuery(
-					"SELECT klant.naam,COUNT(orderklant.orderid) AS 'Aantal'
+					"SELECT klant.naam, COUNT(orderklant.orderid) AS 'aantal'
 					FROM orderklant
 					JOIN klant ON klant.klantid=orderklant.klantid
 					WHERE orderklant.status<>'afgehandeld'
@@ -36,7 +36,7 @@
 			AmCharts.makeChart("chartdiv",
 				{
 					"type": "serial",
-					"categoryField": "category",
+					"categoryField": "Naam",
 					"rotate": true,
 					"startDuration": 1,
 					"theme": "light",
@@ -57,14 +57,14 @@
 							"tabIndex": -1,
 							"title": "graph 1",
 							"type": "column",
-							"valueField": "Openstaande Orders"
+							"valueField": "Aantal"
 						}
 					],
 					"guides": [],
 					"valueAxes": [
 						{
 							"id": "ValueAxis-1",
-							"title": "",
+							"title": "Aantal",
 							"titleFontSize": 5
 						}
 					],
@@ -80,7 +80,7 @@
 					"dataProvider": [
 						<?php while($row2 = $queryResult2->fetch_assoc()): ?>{
 							"Naam": "<?php echo $row2['naam'];?>",
-							"Aantal": "<?php echo $row2['Aantal'];?>"
+							"Aantal": "<?php echo $row2['aantal'];?>"
 						},<?php endwhile;?>
 					]
 				}

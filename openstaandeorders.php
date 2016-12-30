@@ -62,7 +62,9 @@
 						{
 							"id": "ValueAxis-1",
 							"title": "",
-							"titleFontSize": 5
+							"titleFontSize": 5,
+							"min": 0
+							
 						}
 					],
 					"allLabels": [],

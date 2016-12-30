@@ -19,7 +19,7 @@
 	<?php
 			//vul de query in
 			$queryResult2 = getQuery(
-					"SELECT fabrikant.naam, SUM(inkoopprijs.prijs*productenbestelling.hoeveelheid) AS 'inkooptotaal leverancier'
+					"SELECT fabrikant.naam, SUM(inkoopprijs.prijs*productenbestelling.hoeveelheid) AS 'inkooptotaalleverancier'
 					FROM productenbestelling
 					JOIN product ON product.productid=productenbestelling.productid
 					JOIN inkoopprijs ON inkoopprijs.productid=product.productid
@@ -52,7 +52,7 @@
 							"id": "AmGraph-1",
 							"title": "graph 1",
 							"type": "column",
-							"valueField": "inkooptotaal"
+							"valueField": "Inkooptotaal"
 						}
 					],
 					"guides": [],
@@ -74,7 +74,7 @@
 					"dataProvider": [
 					<?php while($row2 = $queryResult2->fetch_assoc()): ?>{
 						"Naam": "<?php echo $row2['naam'];?>",
-						"Inkooptotaal": <?php echo $row2['inkooptotaal leveranciers'];?>
+						"Inkooptotaal": <?php echo $row2['inkooptotaalleveranciers'];?>
 					},<?php endwhile;?>
 				]
 			}

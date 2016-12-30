@@ -17,8 +17,7 @@
 		} );
 	</script>
 	<?php
-			//vul de query in	
-			$queryResult2 = getQuery(
+			//vul de query in				$queryResult2 = getQuery(
 					"SELECT klant.naam, COUNT(orderklant.orderid) AS 'aantal'
 					FROM orderklant
 					JOIN klant ON klant.klantid=orderklant.klantid
@@ -28,8 +27,7 @@
 		?>
 	<!-- amCharts javascript sources -->
 		<script src="amcharts/amcharts.js" type="text/javascript"></script>
-		<script src="amcharts/serial.js" type="text/javascript"></script>
-		
+		<script src="amcharts/serial.js" type="text/javascript"></script>		
 
 		<!-- amCharts javascript code -->
 		<script type="text/javascript">
@@ -39,8 +37,7 @@
 					"categoryField": "Naam",
 					"rotate": true,
 					"startDuration": 1,
-					"theme": "light",
-					"categoryAxis": {
+					"theme": "light",					"categoryAxis": {
 						"gridPosition": "start"
 					},
 					"chartCursor": {
@@ -64,8 +61,7 @@
 					"valueAxes": [
 						{
 							"id": "ValueAxis-1",
-							"title": "Aantal",
-							"titleFontSize": 5
+							"title": "Aantal"
 						}
 					],
 					"allLabels": [],

@@ -54,7 +54,7 @@
 							"id": "AmGraph-1",
 							"title": "graph 1",
 							"type": "column",
-							"valueField": "betalingsduurindagen"
+							"valueField": "Duur"
 						}
 					],
 					"guides": [],

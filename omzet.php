@@ -28,7 +28,7 @@
 					WHERE verkoopprijs.datum<orderklant.datumorder
 					GROUP BY medewerkers.medewerkerid
 					HAVING MAX(verkoopprijs.datum)
-					ORDER BY `totale omzet medewerker` DESC;"
+					ORDER BY `totaleomzetmedewerker` DESC;"
 			);
 		?>
 	<!-- amCharts javascript sources -->
@@ -108,7 +108,7 @@
 					WHERE verkoopprijs.datum<orderklant.datumorder
 					GROUP BY medewerkers.medewerkerid
 					HAVING MAX(verkoopprijs.datum)
-					ORDER BY `totale omzet medewerker` DESC;"
+					ORDER BY `totaleomzetmedewerker` DESC;"
 			);
 		?>
 		

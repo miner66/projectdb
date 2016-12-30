@@ -91,20 +91,15 @@
 		<?php
 			//vul de query in
 			$queryResult1 = getQuery(
-					"SELECT klant.klantid, klant.naam, 
-						CASE
-							WHEN jaaromzet.jaaromzet IS NULL THEN '0'
-							ELSE jaaromzet
-						END AS 'jaaromzet'
-						,
-						CASE
-							WHEN jaaromzet.jaaromzet < 10000 THEN '5'
-							WHEN jaaromzet.jaaromzet >= 10000 AND jaaromzet.jaaromzet<20000 THEN '10'
-							WHEN jaaromzet.jaaromzet >= 20000 THEN '15'
-							ELSE '0'
-						END AS percentage
-					FROM jaaromzet
-					RIGHT JOIN klant ON klant.klantid=jaaromzet.klantid;"
+					"SELECT fabrikant.naam, SUM(inkoopprijs.prijs*productenbestelling.hoeveelheid) AS 'inkooptotaalleverancier'
+					FROM productenbestelling
+					JOIN product ON product.productid=productenbestelling.productid
+					JOIN inkoopprijs ON inkoopprijs.productid=product.productid
+					JOIN besteld ON besteld.bestellingid=productenbestelling.bestellingid
+					JOIN fabrikant ON fabrikant.fabrikantid=besteld.besteldbij
+					WHERE inkoopprijs.datum<besteld.datum
+					GROUP BY fabrikant.fabrikantid
+					HAVING MAX(inkoopprijs.datum);"
 			);
 		?>
 		
@@ -113,19 +108,16 @@
 		<table id='resultTable'>
 			<thead>
 				<tr>
-					<td>ID</td>
 					<td>Naam</td>
-					<td>Jaaromzet</td>
-					<td>Korting</td>
+					<td>Inkooptotaal</td>
 				</tr>
 			</thead>
 			<tbody>
 				<?php   while($row1 = $queryResult1->fetch_assoc()): ?>
 				<tr>
-					<td><?php echo $row1['klantid']; ?></td>
 					<td><?php echo $row1['naam']; ?></td>
-					<td><?php echo $row1['jaaromzet']; ?></td>
-					<td><?php echo $row1['percentage']; ?></td>
+					<td><?php echo $row1['inkooptotaalleverancier']; ?></td>
+
 				</tr>
 				<?php endwhile;?>
 			</tbody>

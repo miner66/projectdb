@@ -63,7 +63,7 @@
 							"id": "ValueAxis-1",
 							"title": "",
 							"titleFontSize": 5,
-							"min": 0
+							"minimum": 0
 							
 						}
 					],

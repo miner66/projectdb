@@ -27,7 +27,7 @@
 					WHERE product.naam = @productnaam
 					ORDER BY product.productid, inkoopprijs.datum;"
 					);
-	echo "			
+	echo "		
 	<!-- amCharts javascript sources -->
 		<script src="amcharts/amcharts.js" type="text/javascript"></script>
 		<script src="amcharts/serial.js" type="text/javascript"></script>
@@ -88,7 +88,6 @@
 				}
 			);
 		</script>"
-	
 			}
 		?>
 </head>

@@ -19,13 +19,14 @@
 	<?php
 			//vul de query in
 			$queryResult2 = getQuery(
-					"SELECT YEARWEEK(datumtijd) AS 'week', CONCAT('Week ' , DATE_FORMAT(datumtijd, '%V') , ' van ' , DATE_FORMAT(datumtijd, '%x')) AS 'datum', CONCAT(((COUNT(locatiecode)/(SELECT COUNT(*) FROM locatiecodes))*100) , '%') AS 'percentagegevuld'
+					"SELECT YEARWEEK(datumtijd) AS 'week', CONCAT('Week ' , DATE_FORMAT(datumtijd, '%V') , ' van ' , DATE_FORMAT(datumtijd, '%x')) AS 'datum', ((COUNT(locatiecode)/(SELECT COUNT(*) FROM locatiecodes))*100) AS 'percentagegevuld'
 					FROM magazijntotaal
 					GROUP BY YEARWEEK(datumtijd)
 					HAVING SUM(hoeveelheid)>0
 					AND `week` >=YEARWEEK(DATE_SUB(NOW(),INTERVAL 52 WEEK))
-ORDER BY `week` ASC;"
+					ORDER BY `week` ASC;"
 			);
+			echo "<!-- test -->"
 		?>
 	<!-- amCharts javascript code -->
 	<script src="amcharts/amcharts.js" type="text/javascript"></script>
@@ -47,13 +48,6 @@ ORDER BY `week` ASC;"
 							"id": "AmGraph-1",
 							"title": "graph 1",
 							"valueField": "column-1"
-						},
-						{
-							"balloonText": "[[title]] of [[category]]:[[value]]",
-							"bullet": "square",
-							"id": "AmGraph-2",
-							"title": "graph 2",
-							"valueField": "column-2"
 						}
 					],
 					"guides": [],
@@ -78,37 +72,11 @@ ORDER BY `week` ASC;"
 					],
 					"dataProvider": [
 					<?php   while($row1 = $queryResult1->fetch_assoc()): ?>
-					
-					
 						{
 							"category": "<?php echo $row1['datum']; ?>",
 							"column-1": <?php echo $row1['percentagegevuld']; ?>
 						},
 						<?php endwhile;?>
-						{
-							"category": "category 2",
-							"column-1": 6
-						},
-						{
-							"category": "category 3",
-							"column-1": 2
-						},
-						{
-							"category": "category 4",
-							"column-1": 1
-						},
-						{
-							"category": "category 5",
-							"column-1": 2
-						},
-						{
-							"category": "category 6",
-							"column-1": 3
-						},
-						{
-							"category": "category 7",
-							"column-1": 6
-						}
 					]
 				}
 			);

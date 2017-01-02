@@ -108,7 +108,8 @@
 								); 
 							?>
 							
-							"text": "<?php echo 'Prijsverandering van ' . $product_pid  . ' ' . $naamProduct; ?>" 										}
+							"text": "<?php echo 'Prijsverandering van ' . $product_pid  . ' ' . mysql_fetch_row($naamProduct)[0]; ?>" 						
+						}
 					],
 				"dataProvider": [
 					<?php while($row2 = $queryResult2->fetch_assoc()): ?>

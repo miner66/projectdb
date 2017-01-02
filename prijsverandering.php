@@ -109,11 +109,9 @@
 		<?php
 			//vul de query in
 			$queryResult1 = getQuery(
-				"SELECT product.productid, product.naam, inkoopprijs.prijs, inkoopprijs.datum
+				"SELECT productid, naam
 				FROM product
-				JOIN inkoopprijs ON inkoopprijs.productid=product.productid
-				WHERE product.productid =" . $_GET["product"] . "
-				ORDER BY product.productid, inkoopprijs.datum;"
+				GROUP BY productid"
 			);
 			
 		?>

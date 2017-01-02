@@ -151,12 +151,12 @@
 					<tbody>
 						<?php   while($row1 = $queryResult1->fetch_assoc()): ?>
 						<tr>
-							<?php $product=$row1['productid']?>
-							<td><?php echo $product; ?></td>
-							<td><?php echo $row1['naam']; ?></td>
-							<td> <input type="submit" name="product" value = <?php echo $product; ?> > </td>
+							" . $product=$row1['productid'] . "
+							<td> " . echo $product; . "</td>
+							<td> " . echo $row1['naam']; . "</td>
+							<td> <input type="submit" name="product" value = " . php echo $product; . " > </td>
 						</tr>
-						<?php endwhile;?>
+						" .  endwhile; . "
 					</tbody>
 				</table>";
 			}

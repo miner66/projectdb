@@ -71,10 +71,10 @@
 						}
 					],
 					"dataProvider": [
-					<?php   while($row1 = $queryResult1->fetch_assoc()): ?>
+					<?php   while($row2 = $queryResult2->fetch_assoc()): ?>
 						{
-							"category": "<?php echo $row1['datum']; ?>",
-							"column-1": <?php echo $row1['percentagegevuld']; ?>
+							"category": "<?php echo $row2['datum']; ?>",
+							"column-1": <?php echo $row2['percentagegevuld']; ?>
 						},
 						<?php endwhile;?>
 					]

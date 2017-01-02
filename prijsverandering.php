@@ -129,9 +129,10 @@
 			<tbody>
 				<?php   while($row1 = $queryResult1->fetch_assoc()): ?>
 				<tr>
-					<td><?php echo $row1['productid']; ?></td>
+					<?php $productProductid=$row1['productid'];  ?>
+					<td><?php echo $productProductid; ?></td>
 					<td><?php echo $row1['naam']; ?></td>
-					<td></td>
+					<td><input type="submit" value="<?php echo $productProductid; ?>" name="product"></td>
 				</tr>
 				<?php endwhile;?>
 			</tbody>

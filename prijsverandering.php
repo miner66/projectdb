@@ -111,11 +111,10 @@
 			if(isset($_GET["product"]))
 			{
 				$queryResult1 = getQuery(
-					"SET @productnaam=$_GET["product"]);
-					SELECT product.productid, product.naam, inkoopprijs.prijs, inkoopprijs.datum
+					"SELECT product.productid, product.naam, inkoopprijs.prijs, inkoopprijs.datum
 					FROM product
 					JOIN inkoopprijs ON inkoopprijs.productid=product.productid
-					WHERE product.naam = @productnaam
+					WHERE product.productid =" . $_GET["product"] . "
 					ORDER BY product.productid, inkoopprijs.datum;"
 				);
 			} else {
@@ -149,7 +148,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<?php   while($row1 = $queryResult1->fetch_assoc()): ?>
+						" . while($row1 = $queryResult1->fetch_assoc()): . "
 						<tr>
 							" . $product=$row1['productid'] . "
 							<td> " . echo $product; . "</td>

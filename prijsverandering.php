@@ -99,9 +99,11 @@
 							"id": "Title-1",
 							"size": 15,
 							
-							<?php $naamProduct = getQuery("SELECT naam FROM product WHERE productid = " . $product_pid . ";"); ?>
+							<?php 
+								$naamProduct = getQuery("SELECT naam FROM product WHERE productid = " . $product_pid . ";"); 
+							?>
 							
-							"text": "<?php echo 'Prijsverandering van ' . $product_pid . " " . $naamProduct; ?>" 										}
+							"text": "<?php echo 'Prijsverandering van ' . $product_pid . ' ' . $naamProduct; ?>" 										}
 					],
 				"dataProvider": [
 					<?php while($row2 = $queryResult2->fetch_assoc()): ?>

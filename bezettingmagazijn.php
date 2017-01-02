@@ -19,7 +19,7 @@
 	<?php
 			//vul de query in
 			$queryResult2 = getQuery(
-					"SELECT YEARWEEK(datumtijd) AS 'week', CONCAT('Week ' , DATE_FORMAT(datumtijd, '%V') , ' van ' , DATE_FORMAT(datumtijd, '%x')) AS 'datum', CONCAT(((COUNT(locatiecode)/(SELECT COUNT(*) FROM locatiecodes))*100) , '%') AS 'percentagegevuld'
+					"SELECT YEARWEEK(datumtijd) AS 'week', CONCAT('Week ' , DATE_FORMAT(datumtijd, '%V') , ' van ' , DATE_FORMAT(datumtijd, '%x')) AS 'datum', ((COUNT(locatiecode)/(SELECT COUNT(*) FROM locatiecodes))*100) AS 'percentagegevuld'
 					FROM magazijntotaal
 					GROUP BY YEARWEEK(datumtijd)
 					HAVING SUM(hoeveelheid)>0
@@ -43,7 +43,7 @@
 				"trendLines": [],
 				"graphs": [
 					{
-						"balloonText": "[[Week]]:[[value]]",
+						"balloonText": "[[Week]]:[[value]]%",
 						"bullet": "round",
 						"id": "AmGraph-1",
 						"title": "graph 1",

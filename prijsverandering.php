@@ -98,7 +98,7 @@
 						{
 							"id": "Title-1",
 							"size": 15,
-							"text": <?php echo "Prijsverandering van " . $product; ?>
+							"text": "<?php echo 'Prijsverandering van ' . $product; ?>"
 						}
 					],
 				"dataProvider": [

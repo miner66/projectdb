@@ -24,8 +24,7 @@
 		}
 		
 		$queryResult2 = getQuery(
-			"SET @productid=1;
-			SELECT *
+			"SELECT *
 			FROM prijzen
 			WHERE productid=" . $product_pid . "
 			UNION

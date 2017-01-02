@@ -100,15 +100,19 @@
 							"size": 15,
 							
 							<?php 
-								 $naamProduct = getQuery(
+								 $naamProductResult = getQuery(
 									"SELECT naam 
 									FROM product 
 									WHERE productid =" . $product_pid . ";
 									"
 								); 
+								$naamProduct = mysqli_fetch_assoc($naamProductResult);
+								$naamProduct = $naamProduct['naam'];
+								
+								
 							?>
 							
-							"text": "<?php echo 'Prijsverandering van ' . $product_pid  . ' ' . mysql_fetch_row($naamProduct)[0]; ?>" 						
+							"text": "<?php echo 'Prijsverandering van ' . $product_pid  . ' ' . $naamProduct; ?>" 						
 						}
 					],
 				"dataProvider": [

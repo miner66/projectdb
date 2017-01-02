@@ -26,13 +26,6 @@
 					WHERE product.productid =" . $_GET["product"] . "
 					ORDER BY product.productid, inkoopprijs.datum;"
 					);
-			} else {
-				$queryResult2 = getQuery(
-					"SELECT product.productid, product.naam, inkoopprijs.prijs, inkoopprijs.datum
-					FROM product
-					JOIN inkoopprijs ON inkoopprijs.productid=product.productid;"
-				);
-				
 			}
 	?>
 				

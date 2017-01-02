@@ -39,7 +39,7 @@
 		AmCharts.makeChart("chartdiv",
 				{
 					"type": "serial",
-					"categoryField": "datum",
+					"categoryField": "Datum",
 					"dataDateFormat": "YYYY-MM-DD",
 					"categoryAxis": {
 						"parseDates": true

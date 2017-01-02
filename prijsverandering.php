@@ -20,11 +20,10 @@
 			//vul de query in
 			if(isset($_GET["product"])){
 				$queryResult2 = getQuery(
-					"SET @productnaam=$_GET["product"]);
-					SELECT product.productid, product.naam, inkoopprijs.prijs, inkoopprijs.datum
+					"SELECT product.productid, product.naam, inkoopprijs.prijs, inkoopprijs.datum
 					FROM product
 					JOIN inkoopprijs ON inkoopprijs.productid=product.productid
-					WHERE product.naam = @productnaam
+					WHERE product.productid =" . $_GET["product"] . "
 					ORDER BY product.productid, inkoopprijs.datum;"
 					);
 	echo "		
@@ -143,9 +142,10 @@
 					<tbody>
 						<?php   while($row1 = $queryResult1->fetch_assoc()): ?>
 						<tr>
-							<td><?php echo $row1['productid']; ?></td>
+							<?php $product=$row1['productid']?>
+							<td><?php echo $product; ?></td>
 							<td><?php echo $row1['naam']; ?></td>
-							<td> <input type="submit" name="product" value = <?php echo $row1['productid']; ?> > </td>
+							<td> <input type="submit" name="product" value = <?php echo $product; ?> > </td>
 						</tr>
 						<?php endwhile;?>
 					</tbody>

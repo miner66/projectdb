@@ -39,12 +39,10 @@
 		AmCharts.makeChart("chartdiv",
 			{
 				"type": "serial",
-				"categoryField": "Datum",
+				"categoryField": "datum",
 				"dataDateFormat": "YYYY-MM-DD",
 				"categoryAxis": {
-					"parseDates": true,
-					"axisAlpha": 0,
-					"minHorizontalGap": 55
+					"parseDates": true
 				},
 				"chartCursor": {
 					"enabled": true
@@ -57,13 +55,13 @@
 					{
 						"bullet": "round",
 						"id": "AmGraph-1",
-						"title": "Inkoopprijs",
-						"valueField": "Inkooppijs"
+						"title": "graph 1",
+						"valueField": "Inkoopprijs"
 					},
 					{
 						"bullet": "square",
 						"id": "AmGraph-2",
-						"title": "Verkoopprijs",
+						"title": "graph 2",
 						"valueField": "Verkoopprijs"
 					}
 				],
@@ -71,7 +69,7 @@
 				"valueAxes": [
 					{
 						"id": "ValueAxis-1",
-						"title": "Prijs"
+						"title": "Axis title"
 					}
 				],
 				"allLabels": [],

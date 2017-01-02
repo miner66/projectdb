@@ -18,11 +18,11 @@
 	</script>
 	<?php
 		//vul de query in
+		$product_pid=1;
 		if(isset($_GET["product"])){
 			$product_pid=$_GET["product"];
-		}else{
-			$product_pid=1;
 		}
+		
 		$queryResult2 = getQuery(
 			"SELECT *
 			FROM prijzen
@@ -79,7 +79,7 @@
 					{
 						"id": "Title-1",
 						"size": 15,
-						"text": <?php echo "Prijsverandering van" . $product_pid; ?>
+						"text": "<?php echo "Prijsverandering van" . $product_pid; ?>"
 					}
 				],
 				"dataProvider": [

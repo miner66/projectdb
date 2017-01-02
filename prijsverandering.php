@@ -147,12 +147,12 @@
 					<?php
 						if(isset($_GET["product"])){
 							echo "<td>ProductID</td>
+							<td>Datum</td>
+							<td>Prijs</td>";
+						} else {
+							echo "<td>ProductID</td>
 							<td>Naam</td>
 							<td>Select</td>";
-						} else {
-							
-							
-							
 						}
 					?>
 					
@@ -161,25 +161,21 @@
 			<tbody>
 				<?php
 					if(isset($_GET["product"])){
-					
-					while($row1 = $queryResult1->fetch_assoc()):
-					echo "
-					<tr>
-						" . $product=$row1['productid'] . "
-						<td> " . $product . " </td>
-						<td> " . $row1['naam'] . " </td>";
+						while($row1 = $queryResult1->fetch_assoc()):
 						
-						
-					echo '	
-						<td> <input type="submit" name="product" value = ' . $product . '> </td>
-					</tr>';
+						endwhile;
 					} else {
-						
+						while($row1 = $queryResult1->fetch_assoc()):
+						echo "
+						<tr>
+							" . $product=$row1['productid'] . "
+							<td> " . $product . " </td>
+							<td> " . $row1['naam'] . " </td>";
+
+						echo '	<td> <input type="submit" name="product" value = ' . $product . '> </td>
+						</tr>';
+						endwhile; 
 					}
-				
-					
-				
-					endwhile; 
 				?>
 			</tbody>
 		</table>

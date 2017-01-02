@@ -26,7 +26,7 @@
 		$queryResult2 = getQuery(
 			"SELECT *
 			FROM prijzen
-			WHERE productid" . $product_pid . "
+			WHERE productid=" . $product_pid . "
 			UNION
 			SELECT product.productid, DATE(NOW()), inkoopprijs.prijs, verkoopprijs.prijs
 			FROM product

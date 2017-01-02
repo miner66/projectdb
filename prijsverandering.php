@@ -84,7 +84,7 @@
 						{
 							"id": "fefae",
 							"size": 15,
-							"text": <?php echo "Prijsverandering van" . $_GET["product"]); ?>
+							"text": <?php echo "Prijsverandering van" . $_GET["product"]; ?>
 						}
 					],
 					"dataProvider": [
@@ -134,34 +134,50 @@
 		<?php
 			if(isset($_GET["product"])){
 				
-				echo "<hr>
-				<div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>";
+				echo '<hr>
+				<div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>';
 				
-			} else {
-				echo "
-				<table id='resultTable'>
-					<thead>
-						<tr>
-							<td>ProductID</td>
-							<td>Naam</td>
-							<td></td>
-						</tr>
-					</thead>
-					<tbody>
-						" . while($row1 = $queryResult1->fetch_assoc()): . "
-						<tr>
-							" . $product=$row1['productid'] . "
-							<td> " . $product . "</td>
-							<td> " . $row1['naam'] . "</td>
-							<td> <input type="submit" name="product" value = " . $product . " > </td>
-						</tr>
-						" .  endwhile; . "
-					</tbody>
-				</table>";
-			}
 		?>
-		
-		
+				
+		<table id="resultTable">
+			<thead>
+				<tr>
+					<?php
+						if(isset($_GET["product"])){
+							echo "<td>ProductID</td>
+							<td>Naam</td>
+							<td>Select</td>";
+						} else {
+							
+							
+							
+						}
+					?>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+					if(isset($_GET["product"])){
+					
+					while($row1 = $queryResult1->fetch_assoc()): . '
+					echo "
+					<tr>
+						" . $product=$row1['productid'] . "
+						<td> " . $product . " </td>
+						<td> " . $row1['naam'] . " </td>";
+						
+						
+					echo '	
+						<td> <input type="submit" name="product" value = ' . $product . '> </td>
+					</tr>';
+				
+					
+				
+					endwhile; 
+				?>
+			</tbody>
+		</table>
 	</div>
 </body>
 </html>

@@ -98,8 +98,10 @@
 						{
 							"id": "Title-1",
 							"size": 15,
-							"text": "<?php echo 'Prijsverandering van ' . $product_pid; ?>"
-						}
+							"text": "<?php 
+							$naamProduct = getQuery("SELECT naam FROM product WHERE productid = " . $product_pid . ");
+							
+							echo 'Prijsverandering van ' . $product_pid . " " . $naamProduct; ?>" 										}
 					],
 				"dataProvider": [
 					<?php while($row2 = $queryResult2->fetch_assoc()): ?>

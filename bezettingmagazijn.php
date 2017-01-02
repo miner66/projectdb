@@ -30,7 +30,7 @@
 		?>
 	<!-- amCharts javascript code -->
 	<script src="amcharts/amcharts.js" type="text/javascript"></script>
-	<script src="amcharts/pie.js" type="text/javascript"></script>
+	<script src="amcharts/serial.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		AmCharts.makeChart("chartdiv",
 			{

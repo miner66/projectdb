@@ -85,7 +85,7 @@
 					"valueAxes": [
 						{
 							"id": "ValueAxis-1",
-							"title": "Axis title"
+							"title": "Prijs"
 						}
 					],
 					"allLabels": [],

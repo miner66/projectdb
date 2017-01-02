@@ -26,7 +26,14 @@
 					WHERE product.productid =" . $_GET["product"] . "
 					ORDER BY product.productid, inkoopprijs.datum;"
 					);
-			}	
+			} else {
+				$queryResult2 = getQuery(
+					"SELECT product.productid, product.naam, inkoopprijs.prijs, inkoopprijs.datum
+					FROM product
+					JOIN inkoopprijs ON inkoopprijs.productid=product.productid;"
+				);
+				
+			}
 	?>
 				
 	<!-- amCharts javascript sources -->
@@ -39,7 +46,7 @@
 			AmCharts.makeChart("chartdiv",
 				{
 					"type": "serial",
-					"categoryField": "category",
+					"categoryField": "Datum",
 					"rotate": true,
 					"startDuration": 1,
 					"theme": "light",
@@ -60,7 +67,7 @@
 							"tabIndex": -1,
 							"title": "graph 1",
 							"type": "column",
-							"valueField": "Openstaande Orders"
+							"valueField": "Prijs"
 						}
 					],
 					"guides": [],
@@ -77,13 +84,13 @@
 						{
 							"id": "fefae",
 							"size": 15,
-							"text": "Aantal openstaande orders"
+							"text": <?php echo "Prijsverandering van" . $_GET["product"]); ?>
 						}
 					],
 					"dataProvider": [
 						<?php while($row2 = $queryResult2->fetch_assoc()): ?>{
-							"Naam": "<?php echo $row2['naam'];?>",
-							"Aantal": <?php echo $row2['Aantal'];?>
+							"Datum": "<?php echo $row2['datum'];?>",
+							"Prijs": <?php echo $row2['prijs'];?>
 						},<?php endwhile;?>
 					]
 				}

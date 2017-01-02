@@ -103,7 +103,8 @@
 								 $naamProduct = getQuery(
 									"SELECT naam 
 									FROM product 
-									WHERE productid = " . $product_pid"
+									WHERE productid =" . $product_pid . ";
+									"
 								); 
 							?>
 							

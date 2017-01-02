@@ -71,13 +71,13 @@
 						{
 							"bullet": "round",
 							"id": "AmGraph-1",
-							"title": "graph 1",
+							"title": "Inkoopprijs",
 							"valueField": "Inkoopprijs"
 						},
 						{
 							"bullet": "square",
 							"id": "AmGraph-2",
-							"title": "graph 2",
+							"title": "Verkoopprijs",
 							"valueField": "Verkoopprijs"
 						}
 					],

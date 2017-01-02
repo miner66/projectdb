@@ -128,7 +128,10 @@
 		<?php
 			if(isset($_GET["product"])){
 
-
+				
+				echo "
+					<hr>
+					<div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>";"
 
 			} else {
 				echo "
@@ -151,10 +154,7 @@
 						<?php endwhile;?>
 					</tbody>
 				</table>
-				
-		<hr>
-		<div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>";
-		}
+			}
 		?>
 		
 		

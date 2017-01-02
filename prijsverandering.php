@@ -26,7 +26,9 @@
 					WHERE product.productid =" . $_GET["product"] . "
 					ORDER BY product.productid, inkoopprijs.datum;"
 					);
-	echo "		
+			}	
+	?>
+				
 	<!-- amCharts javascript sources -->
 		<script src="amcharts/amcharts.js" type="text/javascript"></script>
 		<script src="amcharts/serial.js" type="text/javascript"></script>
@@ -86,9 +88,8 @@
 					]
 				}
 			);
-		</script>"
-			}
-		?>
+		</script>
+		
 </head>
 <body>
 	<header> 
@@ -150,11 +151,13 @@
 						<?php endwhile;?>
 					</tbody>
 				</table>
-				";
-			}
-		?>
+				
 		<hr>
-		<div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
+		<div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>";
+		}
+		?>
+		
+		
 	</div>
 </body>
 </html>

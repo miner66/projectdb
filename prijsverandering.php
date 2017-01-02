@@ -151,9 +151,9 @@
 						" . while($row1 = $queryResult1->fetch_assoc()): . "
 						<tr>
 							" . $product=$row1['productid'] . "
-							<td> " . echo $product; . "</td>
-							<td> " . echo $row1['naam']; . "</td>
-							<td> <input type="submit" name="product" value = " . php echo $product; . " > </td>
+							<td> " . $product . "</td>
+							<td> " . $row1['naam'] . "</td>
+							<td> <input type="submit" name="product" value = " . $product . " > </td>
 						</tr>
 						" .  endwhile; . "
 					</tbody>

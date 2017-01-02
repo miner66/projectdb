@@ -136,7 +136,9 @@
 				
 				echo '<hr>
 				<div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>';
+			} else {
 				
+			}
 		?>
 				
 		<table id="resultTable">
@@ -171,6 +173,9 @@
 					echo '	
 						<td> <input type="submit" name="product" value = ' . $product . '> </td>
 					</tr>';
+					} else {
+						
+					}
 				
 					
 				

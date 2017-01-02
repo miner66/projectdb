@@ -32,60 +32,55 @@
 	<script src="amcharts/amcharts.js" type="text/javascript"></script>
 	<script src="amcharts/pie.js" type="text/javascript"></script>
 	<script type="text/javascript">
-			AmCharts.makeChart("chartdiv",
-				{
-					"type": "serial",
-					"categoryField": "category",
-					"startDuration": 1,
-					"categoryAxis": {
-						"gridPosition": "start"
+		AmCharts.makeChart("chartdiv",
+			{
+				"type": "serial",
+				"categoryField": "Week",
+				"startDuration": 1,
+				"categoryAxis": {
+					"gridPosition": "start"
+				},
+				"trendLines": [],
+				"graphs": [
+					{
+						"balloonText": "[[title]] of [[Week]]:[[value]]",
+						"bullet": "round",
+						"id": "AmGraph-1",
+						"title": "graph 1",
+						"valueField": "percentage"
+					}
+				],
+				"guides": [],
+				"valueAxes": [
+					{
+						"id": "ValueAxis-1",
+						"title": "Percentage vulling magazijn"
+					}
+				],
+				"allLabels": [],
+				"balloon": {},
+				"legend": {
+					"enabled": true,
+					"useGraphSettings": true
+				},
+				"titles": [
+					{
+						"id": "Title-1",
+						"size": 15,
+						"text": "Magazijn bezetting"
+					}
+				],
+				"dataProvider": [
+				<?php   while($row2 = $queryResult2->fetch_assoc()): ?>
+					{
+						"Week": "<?php echo $row2['datum']; ?>",
+						"percentage": <?php echo $row2['percentagegevuld']; ?>
 					},
-					"trendLines": [],
-					"graphs": [
-						{
-							"balloonText": "[[title]] of [[category]]:[[value]]",
-							"bullet": "round",
-							"id": "AmGraph-1",
-							"title": "graph 1",
-							"valueField": "column-1"
-						}
-					],
-					"guides": [],
-					"valueAxes": [
-						{
-							"id": "ValueAxis-1",
-							"title": "Axis title"
-						}
-					],
-					"allLabels": [],
-					"balloon": {},
-					"legend": {
-						"enabled": true,
-						"useGraphSettings": true
-					},
-					"titles": [
-						{
-							"id": "Title-1",
-							"size": 15,
-							"text": "Magazijn bezetting"
-						}
-					],
-					"dataProvider": [
-					<?php   while($row2 = $queryResult2->fetch_assoc()): ?>
-						{
-							"category": "<?php echo $row2['datum']; ?>",
-							"column-1": <?php echo $row2['percentagegevuld']; ?>
-						},
-						<?php endwhile;?>
-					]
-				}
-			);
-		</script>
-	</head>
-	<body>
-		<div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
-	</body>
-</html>
+					<?php endwhile;?>
+				]
+			}
+		);
+	</script>
 </head>
 <body>
 	<header> 

@@ -17,14 +17,27 @@
 		} );
 	</script>
 	<?php
-			//vul de query in	
-			$queryResult2 = getQuery(
-					"SELECT klant.naam,COUNT(orderklant.orderid) AS 'Aantal'
-					FROM orderklant
-					JOIN klant ON klant.klantid=orderklant.klantid
-					WHERE orderklant.status<>'afgehandeld'
-					GROUP BY klant.naam;"
-			);
+			//vul de query in
+			if(isset($_GET["product"])){
+				$queryResult2 = getQuery(
+						"SET @productnaam=$_GET["product"]);
+						SELECT product.productid, product.naam, inkoopprijs.prijs, inkoopprijs.datum
+						FROM product
+						JOIN inkoopprijs ON inkoopprijs.productid=product.productid
+						WHERE product.naam = @productnaam
+						ORDER BY product.productid, inkoopprijs.datum;"
+				);
+			} else {
+				$queryResult2 = getQuery(
+					"SET @productnaam=$_GET["product"]);
+					SELECT product.productid, product.naam, inkoopprijs.prijs, inkoopprijs.datum
+					FROM product
+					JOIN inkoopprijs ON inkoopprijs.productid=product.productid
+					WHERE product.naam = @productnaam
+					ORDER BY product.productid, inkoopprijs.datum;"	
+				);
+			}
+	
 		?>
 	<!-- amCharts javascript sources -->
 		<script src="amcharts/amcharts.js" type="text/javascript"></script>
@@ -89,10 +102,7 @@
 </head>
 <body>
 	<header> 
-		<h1> To dodelydo </h1>
-	
-	
-	
+		
 		<?php
 			include "include/nav.html"
 		?>
@@ -100,12 +110,15 @@
 	<div class='content'>
 		<?php
 			//vul de query in
-			$queryResult1 = getQuery(
-					"SELECT klant.naam, orderklant.orderid, orderklant.status
-					FROM orderklant
-					JOIN klant ON klant.klantid=orderklant.klantid
-					WHERE orderklant.status<>'afgehandeld';"
-			);
+			if(isset($_GET["product"]))
+			{
+				$queryResult1 = getQuery(
+						"SELECT klant.naam, orderklant.orderid, orderklant.status
+						FROM orderklant
+						JOIN klant ON klant.klantid=orderklant.klantid
+						WHERE orderklant.status<>'afgehandeld';"
+				);
+			}
 		?>
 		
 		<!-- maak er een table van -->
@@ -113,9 +126,9 @@
 		<table id='resultTable'>
 			<thead>
 				<tr>
+					<td>ProductID</td>
 					<td>Naam</td>
-					<td>OrderID</td>
-					<td>Status</td>
+					<td></td>
 				</tr>
 			</thead>
 			<tbody>

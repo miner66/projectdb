@@ -37,54 +37,54 @@
 	<!-- amCharts javascript code -->
 	<script type="text/javascript">
 		AmCharts.makeChart("chartdiv",
-			{
-				"type": "serial",
-				"categoryField": "datum",
-				"dataDateFormat": "YYYY-MM-DD",
-				"categoryAxis": {
-					"parseDates": true
-				},
-				"chartCursor": {
-					"enabled": true
-				},
-				"chartScrollbar": {
-					"enabled": true
-				},
-				"trendLines": [],
-				"graphs": [
-					{
-						"bullet": "round",
-						"id": "AmGraph-1",
-						"title": "graph 1",
-						"valueField": "Inkoopprijs"
+				{
+					"type": "serial",
+					"categoryField": "datum",
+					"dataDateFormat": "YYYY-MM-DD",
+					"categoryAxis": {
+						"parseDates": true
 					},
-					{
-						"bullet": "square",
-						"id": "AmGraph-2",
-						"title": "graph 2",
-						"valueField": "Verkoopprijs"
-					}
-				],
-				"guides": [],
-				"valueAxes": [
-					{
-						"id": "ValueAxis-1",
-						"title": "Axis title"
-					}
-				],
-				"allLabels": [],
-				"balloon": {},
-				"legend": {
-					"enabled": true,
-					"useGraphSettings": true
-				},
-				"titles": [
-					{
-						"id": "Title-1",
-						"size": 15,
-						"text": "<?php echo "Prijsverandering van" . $product_pid; ?>"
-					}
-				],
+					"chartCursor": {
+						"enabled": true
+					},
+					"chartScrollbar": {
+						"enabled": true
+					},
+					"trendLines": [],
+					"graphs": [
+						{
+							"bullet": "round",
+							"id": "AmGraph-1",
+							"title": "graph 1",
+							"valueField": "Inkoopprijs"
+						},
+						{
+							"bullet": "square",
+							"id": "AmGraph-2",
+							"title": "graph 2",
+							"valueField": "Verkoopprijs"
+						}
+					],
+					"guides": [],
+					"valueAxes": [
+						{
+							"id": "ValueAxis-1",
+							"title": "Axis title"
+						}
+					],
+					"allLabels": [],
+					"balloon": {},
+					"legend": {
+						"enabled": true,
+						"useGraphSettings": true
+					},
+					"titles": [
+						{
+							"id": "Title-1",
+							"size": 15,
+							"text": "prijsverandering van1"
+						}
+					],
 				"dataProvider": [
 					<?php while($row2 = $queryResult2->fetch_assoc()): ?>
 					{

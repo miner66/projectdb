@@ -46,12 +46,10 @@
 			AmCharts.makeChart("chartdiv",
 				{
 					"type": "serial",
-					"categoryField": "Datum",
-					"rotate": true,
-					"startDuration": 1,
-					"theme": "light",
+					"categoryField": "date",
+					"dataDateFormat": "YYYY-MM-DD",
 					"categoryAxis": {
-						"gridPosition": "start"
+						"parseDates": true
 					},
 					"chartCursor": {
 						"enabled": true
@@ -62,11 +60,15 @@
 					"trendLines": [],
 					"graphs": [
 						{
-							"fillAlphas": 1,
+							"bullet": "round",
 							"id": "AmGraph-1",
-							"tabIndex": -1,
 							"title": "graph 1",
-							"type": "column",
+							"valueField": "Prijs"
+						},
+						{
+							"bullet": "square",
+							"id": "AmGraph-2",
+							"title": "graph 2",
 							"valueField": "Prijs"
 						}
 					],
@@ -74,12 +76,15 @@
 					"valueAxes": [
 						{
 							"id": "ValueAxis-1",
-							"title": "",
-							"titleFontSize": 5
+							"title": "Datum"
 						}
 					],
 					"allLabels": [],
 					"balloon": {},
+					"legend": {
+						"enabled": true,
+						"useGraphSettings": true
+					},
 					"titles": [
 						{
 							"id": "fefae",

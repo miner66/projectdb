@@ -17,14 +17,18 @@
 		} );
 	</script>
 	<?php
-			//vul de query in
-			if(isset($_GET["product"])){
-				$queryResult2 = getQuery(
-					"SELECT *
-					FROM prijzen
-					WHERE productid=" . $_GET["product"] . ";"
-					);
-			}
+		//vul de query in
+		if(isset($_GET["product"])){
+			$product_pid=$_GET["product"];
+		}else{
+			$product_pid=1;
+		}
+		$queryResult2 = getQuery(
+			"SELECT *
+			FROM prijzen
+			WHERE productid=" . $product_pid . ";"
+		);
+		
 	?>
 				
 	<script type="text/javascript" src="js/amcharts.js"></script>
@@ -75,7 +79,7 @@
 					{
 						"id": "Title-1",
 						"size": 15,
-						"text": <?php echo "Prijsverandering van" . $_GET["product"]; ?>
+						"text": <?php echo "Prijsverandering van" . $product_pid; ?>
 					}
 				],
 				"dataProvider": [

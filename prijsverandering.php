@@ -20,24 +20,14 @@
 			//vul de query in
 			if(isset($_GET["product"])){
 				$queryResult2 = getQuery(
-						"SET @productnaam=$_GET["product"]);
-						SELECT product.productid, product.naam, inkoopprijs.prijs, inkoopprijs.datum
-						FROM product
-						JOIN inkoopprijs ON inkoopprijs.productid=product.productid
-						WHERE product.naam = @productnaam
-						ORDER BY product.productid, inkoopprijs.datum;"
-				);
-			} else {
-				$queryResult2 = getQuery(
 					"SET @productnaam=$_GET["product"]);
 					SELECT product.productid, product.naam, inkoopprijs.prijs, inkoopprijs.datum
 					FROM product
 					JOIN inkoopprijs ON inkoopprijs.productid=product.productid
 					WHERE product.naam = @productnaam
-					ORDER BY product.productid, inkoopprijs.datum;"	
+					ORDER BY product.productid, inkoopprijs.datum;"
 				);
 			}
-	
 		?>
 	<!-- amCharts javascript sources -->
 		<script src="amcharts/amcharts.js" type="text/javascript"></script>
@@ -113,34 +103,55 @@
 			if(isset($_GET["product"]))
 			{
 				$queryResult1 = getQuery(
-						"SELECT klant.naam, orderklant.orderid, orderklant.status
-						FROM orderklant
-						JOIN klant ON klant.klantid=orderklant.klantid
-						WHERE orderklant.status<>'afgehandeld';"
+					"SET @productnaam=$_GET["product"]);
+					SELECT product.productid, product.naam, inkoopprijs.prijs, inkoopprijs.datum
+					FROM product
+					JOIN inkoopprijs ON inkoopprijs.productid=product.productid
+					WHERE product.naam = @productnaam
+					ORDER BY product.productid, inkoopprijs.datum;"
 				);
+			} else {
+				
+				$queryResult1 = getQuery(
+					"SELECT productid, naam
+					FROM product
+					GROUP BY productid;"
+				);
+					
+					
 			}
 		?>
 		
 		<!-- maak er een table van -->
 		<!--<input type="text" id="searchInput" onkeyup="searchFunction1()" placeholder="Typ de naam...">-->
-		<table id='resultTable'>
-			<thead>
-				<tr>
-					<td>ProductID</td>
-					<td>Naam</td>
-					<td></td>
-				</tr>
-			</thead>
-			<tbody>
-				<?php   while($row1 = $queryResult1->fetch_assoc()): ?>
-				<tr>
-					<td><?php echo $row1['naam']; ?></td>
-					<td><?php echo $row1['orderid']; ?></td>
-					<td><?php echo $row1['status']; ?></td>
-				</tr>
-				<?php endwhile;?>
-			</tbody>
-		</table>
+		<?php
+			if(isset($_GET["product"])){
+
+
+
+			} else {
+				echo "
+				<table id='resultTable'>
+					<thead>
+						<tr>
+							<td>ProductID</td>
+							<td>Naam</td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody>
+						<?php   while($row1 = $queryResult1->fetch_assoc()): ?>
+						<tr>
+							<td><?php echo $row1['productid']; ?></td>
+							<td><?php echo $row1['naam']; ?></td>
+							<td> <input type="submit" name="product" value = <?php echo $row1['productid']; ?> > </td>
+						</tr>
+						<?php endwhile;?>
+					</tbody>
+				</table>
+				";
+			}
+		?>
 		<hr>
 		<div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
 	</div>

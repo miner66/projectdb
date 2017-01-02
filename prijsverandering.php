@@ -17,79 +17,83 @@
 		} );
 	</script>
 	<?php
-			//vul de query in
-			if(isset($_GET["product"])){
-				$queryResult2 = getQuery(
-					"SELECT *
-					FROM prijzen
-					WHERE productid=" . $_GET["product"] . ";"
-					);
-			}
+		//vul de query in
+		$product_pid=1;
+		if(isset($_GET["product"])){
+			$product_pid=$_GET["product"];
+		}
+		
+		$queryResult2 = getQuery(
+			"SELECT *
+			FROM prijzen
+			WHERE productid=" . $product_pid . ";"
+		);
+		
 	?>
 				
-	<!-- amCharts javascript sources -->
-		<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-		<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
-		
-
-		<!-- amCharts javascript code -->
-		<script type="text/javascript">
-			AmCharts.makeChart("chartdiv",
-				{
-					"type": "serial",
-					"categoryField": "date",
-					"dataDateFormat": "YYYY-MM-DD",
-					"categoryAxis": {
-						"parseDates": true
+	<script type="text/javascript" src="js/amcharts.js"></script>
+	<script type="text/javascript" src="js/serial.js"></script>
+	
+	<!-- amCharts javascript code -->
+	<script type="text/javascript">
+		AmCharts.makeChart("chartdiv",
+			{
+				"type": "serial",
+				"categoryField": "date",
+				"dataDateFormat": "YYYY-MM-DD",
+				"categoryAxis": {
+					"parseDates": true
+				},
+				"chartCursor": {
+					"enabled": true
+				},
+				"trendLines": [],
+				"graphs": [
+					{
+						"bullet": "round",
+						"id": "AmGraph-1",
+						"title": "Inkoopprijs",
+						"valueField": "Inkooppijs"
 					},
-					"chartCursor": {
-						"enabled": true
+					{
+						"bullet": "Verkoopprijs",
+						"id": "AmGraph-2",
+						"title": "graph 2",
+						"valueField": "Verkoopprijs"
+					}
+				],
+				"guides": [],
+				"valueAxes": [
+					{
+						"id": "ValueAxis-1",
+						"title": "Prijs"
+					}
+				],
+				"allLabels": [],
+				"balloon": {},
+				"legend": {
+					"enabled": true,
+					"useGraphSettings": true
+				},
+				"titles": [
+					{
+						"id": "Title-1",
+						"size": 15,
+						"text": "<?php echo "Prijsverandering van" . $product_pid; ?>"
+					}
+				],
+				"dataProvider": [
+					<?php while($row2 = $queryResult2->fetch_assoc()): ?>
+					{
+						"Datum": "<?php echo $row2['datum'];?>",
+						"Inkoopprijs": <?php echo $row2['inkoopprijs'];?>,
+						"Verkoopprijs": <?php echo $row2['verkoopprijs'];?>
 					},
-					"trendLines": [],
-					"graphs": [
-						{
-							"bullet": "round",
-							"id": "AmGraph-1",
-							"title": "graph 1",
-							"valueField": "Prijs"
-						},
-						{
-							"bullet": "square",
-							"id": "AmGraph-2",
-							"title": "graph 2",
-							"valueField": "Prijs"
-						}
-					],
-					"guides": [],
-					"valueAxes": [
-						{
-							"id": "ValueAxis-1",
-							"title": "Datum"
-						}
-					],
-					"allLabels": [],
-					"balloon": {},
-					"legend": {
-						"enabled": true,
-						"useGraphSettings": true
-					},
-					"titles": [
-						{
-							"id": "Title-1",
-							"size": 15,
-							"text": <?php echo "Prijsverandering van" . $_GET["product"]; ?>
-						}
-					],
-					"dataProvider": [
-						<?php while($row2 = $queryResult2->fetch_assoc()): ?>{
-							"Datum": "<?php echo $row2['datum'];?>",
-							"Prijs": <?php echo $row2['prijs'];?>
-						},<?php endwhile;?>
-					]
-				}
-			);
-		</script>
-		
+					<?php endwhile;?>
+				]
+			}
+		);
+	</script>
 </head>
 <body>
 	<header> 

@@ -31,8 +31,8 @@
 		
 	?>
 				
-	<script type="text/javascript" src="js/amcharts.js"></script>
-	<script type="text/javascript" src="js/serial.js"></script>
+	<script type="text/javascript" src="amcharts/amcharts.js"></script>
+	<script type="text/javascript" src="amcharts/serial.js"></script>
 	
 	<!-- amCharts javascript code -->
 	<script type="text/javascript">

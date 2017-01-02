@@ -112,7 +112,7 @@
 								
 							?>
 							
-							"text": "<?php echo 'Prijsverandering van ' . $product_pid  . ' ' . $naamProduct; ?>" 						
+							"text": "<?php echo 'Prijsverandering van ' . $naamProduct  . ' ' . $product_pid; ?>" 						
 						}
 					],
 				"dataProvider": [

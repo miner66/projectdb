@@ -160,7 +160,7 @@
 				<?php
 					if(isset($_GET["product"])){
 					
-					while($row1 = $queryResult1->fetch_assoc()): . '
+					while($row1 = $queryResult1->fetch_assoc()):
 					echo "
 					<tr>
 						" . $product=$row1['productid'] . "

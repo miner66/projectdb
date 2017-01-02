@@ -134,12 +134,10 @@
 		<!--<input type="text" id="searchInput" onkeyup="searchFunction1()" placeholder="Typ de naam...">-->
 		<?php
 			if(isset($_GET["product"])){
-
 				
-				echo "
-					<hr>
-					<div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>";"
-
+				echo "<hr>
+				<div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>";
+				
 			} else {
 				echo "
 				<table id='resultTable'>
@@ -160,7 +158,7 @@
 						</tr>
 						<?php endwhile;?>
 					</tbody>
-				</table>
+				</table>";
 			}
 		?>
 		

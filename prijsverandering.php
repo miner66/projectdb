@@ -44,7 +44,7 @@
 				"categoryAxis": {
 					"parseDates": true,
 					"axisAlpha": 0,
-					"minHorzintalGap": 55
+					"minHorizontalGap": 55
 				},
 				"chartCursor": {
 					"enabled": true
@@ -61,7 +61,7 @@
 						"valueField": "Inkooppijs"
 					},
 					{
-						"bullet": "Verkoopprijs",
+						"bullet": "square",
 						"id": "AmGraph-2",
 						"title": "Verkoopprijs",
 						"valueField": "Verkoopprijs"

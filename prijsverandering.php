@@ -26,9 +26,8 @@
 					JOIN inkoopprijs ON inkoopprijs.productid=product.productid
 					WHERE product.naam = @productnaam
 					ORDER BY product.productid, inkoopprijs.datum;"
-				);
-			}
-		?>
+					);
+	echo "			
 	<!-- amCharts javascript sources -->
 		<script src="amcharts/amcharts.js" type="text/javascript"></script>
 		<script src="amcharts/serial.js" type="text/javascript"></script>
@@ -88,7 +87,10 @@
 					]
 				}
 			);
-		</script>
+		</script>"
+	
+			}
+		?>
 </head>
 <body>
 	<header> 

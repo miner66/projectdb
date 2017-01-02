@@ -108,77 +108,45 @@
 	<div class='content'>
 		<?php
 			//vul de query in
-			if(isset($_GET["product"]))
-			{
-				$queryResult1 = getQuery(
-					"SELECT product.productid, product.naam, inkoopprijs.prijs, inkoopprijs.datum
-					FROM product
-					JOIN inkoopprijs ON inkoopprijs.productid=product.productid
-					WHERE product.productid =" . $_GET["product"] . "
-					ORDER BY product.productid, inkoopprijs.datum;"
-				);
-			} else {
-				
-				$queryResult1 = getQuery(
-					"SELECT productid, naam
-					FROM product
-					GROUP BY productid;"
-				);
-					
-					
-			}
+			$queryResult1 = getQuery(
+				"SELECT product.productid, product.naam, inkoopprijs.prijs, inkoopprijs.datum
+				FROM product
+				JOIN inkoopprijs ON inkoopprijs.productid=product.productid
+				WHERE product.productid =" . $_GET["product"] . "
+				ORDER BY product.productid, inkoopprijs.datum;"
+			);
+			
 		?>
 		
 		<!-- maak er een table van -->
-		<!--<input type="text" id="searchInput" onkeyup="searchFunction1()" placeholder="Typ de naam...">-->
-		<?php
-			if(isset($_GET["product"])){
-				
-				echo '<hr>
-				<div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>';
-			} else {
-				
-			}
-		?>
-				
-		<table id="resultTable">
+		<!--<input type="text" id="searchInput" onkeyup="searchFunction1()" placeholder="Typ de naam...">-->		
+		<table id='resultTable'>
 			<thead>
 				<tr>
-					<?php
-						if(isset($_GET["product"])){
-							echo "<td>ProductID</td>
-							<td>Datum</td>
-							<td>Prijs</td>";
-						} else {
-							echo "<td>ProductID</td>
-							<td>Naam</td>
-							<td>Select</td>";
-						}
-					?>
-					
+					<td>ProductID</td>
+					<td>Naam</td>
 				</tr>
 			</thead>
 			<tbody>
-				<?php
-					if(isset($_GET["product"])){
-						while($row1 = $queryResult1->fetch_assoc()):
-						
-						endwhile;
-					} else {
-						while($row1 = $queryResult1->fetch_assoc()):
-						echo "
-						<tr>
-							" . $product=$row1['productid'] . "
-							<td> " . $product . " </td>
-							<td> " . $row1['naam'] . " </td>";
-
-						echo '	<td> <input type="submit" name="product" value = ' . $product . '> </td>
-						</tr>';
-						endwhile; 
-					}
-				?>
+				<?php   while($row1 = $queryResult1->fetch_assoc()): ?>
+				<tr>
+					<td><?php echo $row1['productid']; ?></td>
+					<td><?php echo $row1['naam']; ?></td>
+					<td></td>
+				</tr>
+				<?php endwhile;?>
 			</tbody>
 		</table>
+		
+		<?php
+			if(isset($_GET["product"])){
+				
+				echo '
+				<hr>
+				<div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
+				';
+			}
+		>?
 	</div>
 </body>
 </html>

@@ -89,8 +89,8 @@
 					<?php while($row2 = $queryResult2->fetch_assoc()): ?>
 					{
 						"Datum": "<?php echo $row2['datum'];?>",
-						"Inkoopprijs": <?php echo $row2['inkoopprijs'];?>,
-						"Verkoopprijs": <?php echo $row2['verkoopprijs'];?>
+						"Inkoopprijs": "<?php echo $row2['inkoopprijs'];?>",
+						"Verkoopprijs": "<?php echo $row2['verkoopprijs'];?>"
 					},
 					<?php endwhile;?>
 				]

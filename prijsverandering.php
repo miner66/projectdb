@@ -123,6 +123,7 @@
 				<tr>
 					<td>ProductID</td>
 					<td>Naam</td>
+					<td>Select</td>
 				</tr>
 			</thead>
 			<tbody>

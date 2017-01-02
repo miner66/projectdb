@@ -20,11 +20,9 @@
 			//vul de query in
 			if(isset($_GET["product"])){
 				$queryResult2 = getQuery(
-					"SELECT product.productid, product.naam, inkoopprijs.prijs, inkoopprijs.datum
-					FROM product
-					JOIN inkoopprijs ON inkoopprijs.productid=product.productid
-					WHERE product.productid =" . $_GET["product"] . "
-					ORDER BY product.productid, inkoopprijs.datum;"
+					"SELECT *
+					FROM prijzen
+					WHERE productid=" . $_GET["product"] . ";"
 					);
 			}
 	?>
@@ -45,9 +43,6 @@
 						"parseDates": true
 					},
 					"chartCursor": {
-						"enabled": true
-					},
-					"chartScrollbar": {
 						"enabled": true
 					},
 					"trendLines": [],

@@ -27,22 +27,22 @@
 			"SET @productid=1;
 			SELECT *
 			FROM prijzen
-			WHERE productid=@productid
+			WHERE productid=" . $product_pid . "
 			UNION
 			SELECT product.productid, DATE(NOW()), inkoopprijs.prijs, verkoopprijs.prijs
 			FROM product
 			JOIN verkoopprijs ON verkoopprijs.productid=product.productid
 			JOIN inkoopprijs ON inkoopprijs.productid=product.productid
-			WHERE product.productid=@productid
+			WHERE product.productid=" . $product_pid . "
 			AND inkoopprijs.datum=(
 				SELECT MAX(datum)
 				FROM inkoopprijs
-				WHERE productid=@productid
+				WHERE productid=" . $product_pid . "
 			)
 			AND verkoopprijs.datum=(
 				SELECT MAX(datum)
 				FROM verkoopprijs
-				WHERE productid=@productid
+				WHERE productid=" . $product_pid . "
 			);"
 		);
 		

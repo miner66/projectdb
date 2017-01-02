@@ -26,7 +26,16 @@
 		$queryResult2 = getQuery(
 			"SELECT *
 			FROM prijzen
-			WHERE productid=" . $product_pid . ";"
+			WHERE productid" . $product_pid . "
+			UNION
+			SELECT product.productid, DATE(NOW()), inkoopprijs.prijs, verkoopprijs.prijs
+			FROM product
+			JOIN verkoopprijs ON verkoopprijs.productid=product.productid
+			JOIN inkoopprijs ON inkoopprijs.productid=product.productid
+			WHERE product.productid=" . $product_pid . "
+			GROUP BY product.productid
+			HAVING MAX(verkoopprijs.datum)
+			AND MAX(inkoopprijs.datum);"
 		);
 		
 	?>

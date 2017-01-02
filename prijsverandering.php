@@ -37,8 +37,8 @@
 	?>
 				
 	<!-- amCharts javascript sources -->
-		<script src="amcharts/amcharts.js" type="text/javascript"></script>
-		<script src="amcharts/serial.js" type="text/javascript"></script>
+		<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+		<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
 		
 
 		<!-- amCharts javascript code -->
@@ -87,7 +87,7 @@
 					},
 					"titles": [
 						{
-							"id": "fefae",
+							"id": "Title-1",
 							"size": 15,
 							"text": <?php echo "Prijsverandering van" . $_GET["product"]; ?>
 						}

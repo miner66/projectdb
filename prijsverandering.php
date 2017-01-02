@@ -132,7 +132,7 @@
 					<?php $productProductid=$row1['productid'];  ?>
 					<td><?php echo $productProductid; ?></td>
 					<td><?php echo $row1['naam']; ?></td>
-					<td><input type="submit" value="<?php echo $productProductid; ?>" name="product"></td>
+					<td><input type="submit" value="<?php echo $productProductid; ?>" name="product" action="prijsverandering.php"></td>
 				</tr>
 				<?php endwhile;?>
 			</tbody>

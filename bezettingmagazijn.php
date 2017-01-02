@@ -19,7 +19,7 @@
 	<?php
 			//vul de query in
 			$queryResult2 = getQuery(
-					"SELECT YEARWEEK(datumtijd) AS 'week', CONCAT('Week ' , DATE_FORMAT(datumtijd, '%V') , ' van ' , DATE_FORMAT(datumtijd, '%x')) AS 'datum', CONCAT(((COUNT(locatiecode)/(SELECT COUNT(*) FROM locatiecodes))*100) , '%') AS 'percentage gevuld'
+					"SELECT YEARWEEK(datumtijd) AS 'week', CONCAT('Week ' , DATE_FORMAT(datumtijd, '%V') , ' van ' , DATE_FORMAT(datumtijd, '%x')) AS 'datum', CONCAT(((COUNT(locatiecode)/(SELECT COUNT(*) FROM locatiecodes))*100) , '%') AS 'percentagegevuld'
 					FROM magazijntotaal
 					GROUP BY YEARWEEK(datumtijd)
 					HAVING SUM(hoeveelheid)>0
@@ -82,7 +82,7 @@ ORDER BY `week` ASC;"
 					
 						{
 							"category": "<?php echo $row1['datum']; ?>",
-							"column-1": <?php echo $row1['percentage gevuld']; ?>
+							"column-1": <?php echo $row1['percentagegevuld']; ?>
 						},
 						<?php endwhile;?>
 						{
@@ -129,7 +129,7 @@ ORDER BY `week` ASC;"
 		<?php
 			//vul de query in
 			$queryResult1 = getQuery(
-					"SELECT YEARWEEK(datumtijd) AS 'week', CONCAT('Week ' , DATE_FORMAT(datumtijd, '%V') , ' van ' , DATE_FORMAT(datumtijd, '%x')) AS 'datum', CONCAT(((COUNT(locatiecode)/(SELECT COUNT(*) FROM locatiecodes))*100) , '%') AS 'percentage gevuld'
+					"SELECT YEARWEEK(datumtijd) AS 'week', CONCAT('Week ' , DATE_FORMAT(datumtijd, '%V') , ' van ' , DATE_FORMAT(datumtijd, '%x')) AS 'datum', CONCAT(((COUNT(locatiecode)/(SELECT COUNT(*) FROM locatiecodes))*100) , '%') AS 'percentagegevuld'
 					FROM magazijntotaal
 					GROUP BY YEARWEEK(datumtijd)
 					HAVING SUM(hoeveelheid)>0
@@ -151,7 +151,7 @@ ORDER BY `week` ASC;"
 				<?php   while($row1 = $queryResult1->fetch_assoc()): ?>
 				<tr>
 					<td><?php echo $row1['datum']; ?></td>
-					<td><?php echo $row1['percentage gevuld']; ?></td>
+					<td><?php echo $row1['percentagegevuld']; ?></td>
 				</tr>
 				<?php endwhile;?>
 			</tbody>

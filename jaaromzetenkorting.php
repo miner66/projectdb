@@ -55,7 +55,13 @@
 					"align": "center",
 					"markerType": "circle"
 				},
-				"titles": [],
+				"titles": [
+						{
+							"id": "fefae",
+							"size": 15,
+							"text": "Jaaromzet"
+						}
+				],
 				"dataProvider": [
 					<?php while($row2 = $queryResult2->fetch_assoc()): ?>{
 						"Apotheker": "<?php echo $row2['naam'];?>",

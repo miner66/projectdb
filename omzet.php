@@ -124,7 +124,7 @@
 			<tbody>
 				<?php   while($row1 = $queryResult1->fetch_assoc()): ?>
 				<tr>
-					<td><?php echo $row1['Naam']; ?></td>
+					<td><?php echo $row1['naam']; ?></td>
 					<td><?php echo $row1['totaleomzetmedewerker']; ?></td>
 				</tr>
 				<?php endwhile;?>

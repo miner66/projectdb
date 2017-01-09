@@ -16,6 +16,81 @@
 			$('#resultTable').DataTable();
 		} );
 	</script>
+	
+	<?php
+			//vul de query in	
+			$queryResult2 = getQuery(
+					"SELECT klant.klantid, COUNT(orderklant.orderid) AS 'Aantal'
+					FROM orderklant
+					JOIN factuur ON factuur.orderid=orderklant.orderid
+					JOIN klant ON klant.klantid=orderklant.klantid
+					WHERE orderklant.status='afgehandeld'
+					AND factuur.status<>'betaald'
+					GROUP BY klant.klantid"
+			);
+		?>
+	<!-- amCharts javascript sources -->
+		<script src="amcharts/amcharts.js" type="text/javascript"></script>
+		<script src="amcharts/serial.js" type="text/javascript"></script>
+		
+
+		<!-- amCharts javascript code -->
+		<script type="text/javascript">
+			AmCharts.makeChart("chartdiv",
+				{
+					"type": "serial",
+					"categoryField": "Naam",
+					"rotate": true,
+					"startDuration": 1,
+					"theme": "light",
+					"categoryAxis": {
+						"gridPosition": "start"
+					},
+					"chartCursor": {
+						"enabled": true
+					},
+					"trendLines": [],
+					"graphs": [
+						{
+							"fillAlphas": 1,
+							"id": "AmGraph-1",
+							"tabIndex": -1,
+							"title": "graph 1",
+							"type": "column",
+							"valueField": "Aantal"
+						}
+					],
+					"guides": [],
+					"valueAxes": [
+						{
+							"id": "ValueAxis-1",
+							"title": "",
+							"titleFontSize": 5
+							
+						}
+					],
+					"allLabels": [],
+					"balloon": {},
+					"titles": [
+						{
+							"id": "fefae",
+							"size": 15,
+							"text": "Aantal onbetalde orders"
+						}
+					],
+					"dataProvider": [
+						<?php while($row2 = $queryResult2->fetch_assoc()): ?>{
+							"Naam": "<?php echo $row2['naam'];?>",
+							"Aantal": "<?php echo $row2['Aantal'];?>"
+						},<?php endwhile;?>
+					]
+				}
+			);
+		</script>
+	
+	
+	
+	
 </head>
 <body>
 	<header> 

@@ -20,7 +20,7 @@
 	<?php
 			//vul de query in	
 			$queryResult2 = getQuery(
-					"SELECT klant.naam, klant.klantid, COUNT(orderklant.orderid) AS 'Aantal'
+					"SELECT naam, klant.klantid, COUNT(orderklant.orderid) AS 'Aantal'
 					FROM orderklant
 					JOIN factuur ON factuur.orderid=orderklant.orderid
 					JOIN klant ON klant.klantid=orderklant.klantid

@@ -95,3 +95,7 @@ p {
 .container{
 	display:flex;
 }
+
+a {
+	color: white;
+}

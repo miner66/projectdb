@@ -96,7 +96,7 @@ p {
 	display:flex;
 }
 
-ul li a {
+nav a {
 	color: white;
 	text-decoration: none;
 }

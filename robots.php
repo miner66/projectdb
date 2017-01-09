@@ -84,7 +84,7 @@
 		</script>
 </head>
 <body>
-	<header> w
+	<header> 
 		<?php
 			include "include/nav.html"
 		?>

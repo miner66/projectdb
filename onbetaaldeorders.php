@@ -75,7 +75,7 @@
 						{
 							"id": "fefae",
 							"size": 15,
-							"text": "Aantal onbetalde orders"
+							"text": "Aantal onbetaalde orders"
 						}
 					],
 					"dataProvider": [

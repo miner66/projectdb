@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="nl">
 <head>
 	<title> B1b Schermen Timaflu </title>
@@ -28,7 +28,7 @@
 		<?php
 			//vul de query in
 			$queryResult1 = getQuery(
-				"SELECT klandid, naam
+				"SELECT klantid, naam
 				FROM klant"
 			);
 			

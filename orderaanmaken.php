@@ -110,7 +110,11 @@
 		
 		<hr>
 		<div><span>&euro;</span><span id='costWithout'>0.00</span></div>
-		<div><span id='percentage'><?php echo $queryResult2; ?></span>%</div>
+		<?php 
+			$percentage = mysqli_fetch_assoc($queryResult2);
+			$percentage = $percentage['percentage'];
+		?>
+		<div><span id='percentage'><?php echo $percentage; ?></span><span>%</span></div>
 		<div><span>&euro;</span><span id='costWith'>0.00</span></div>
 	</div>
 </body>

@@ -19,7 +19,7 @@ function doCalc(){
 				lineCost[i].innerHTML =parseFloat(minNum[i].innerText*linePrice[i].innerHTML).toFixed(2);
 			}
 		}else{
-			lineCost[i].innerHTML =parseFloat(minNum[i].innerText*linePrice[i].innerHTML).toFixed(2);
+			lineCost[i].innerHTML =parseFloat(numArt[i].innerText*linePrice[i].innerHTML).toFixed(2);
 		}
 	}	
 	

@@ -111,11 +111,11 @@ nav a {
 	text-decoration: none;
 }
 
-.calculationBar{
+#calculationBar{
 	width: 200px;
 }
 
-.outcomeTable th{
+#outcomeTable th{
 	width: 25%;	
 }
 

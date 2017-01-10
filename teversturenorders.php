@@ -56,7 +56,7 @@
 					<td><?php echo $row1['bakken']; ?></td>
 					<td><?php echo $row1['status']; ?></td>
 					<td><?php echo $row1['naam']; ?></td>
-					<td><?php echo $row1['adres'] . "\n" . echo $row1['postcode'] . " " . echo $row1['plaatsnaam']; ?></td>
+					<td><?php echo $row1['adres'] . "\n" . $row1['postcode'] . " " . $row1['plaatsnaam']; ?></td>
 				</tr>
 				<?php endwhile;?>
 			</tbody>

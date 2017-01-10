@@ -24,44 +24,8 @@
 		?>
 	</header>
 	<div class='content'>
-		<?php
-			//vul de query in
-			$queryResult = getQuery(
-					"SELECT klant.klantid, klant.naam, jaaromzet,
-						CASE
-							WHEN jaaromzet.jaaromzet < 10000 THEN '5'
-							WHEN jaaromzet.jaaromzet >= 10000 AND jaaromzet.jaaromzet<20000 THEN '10'
-							WHEN jaaromzet.jaaromzet >= 20000 THEN '15'
-							ELSE '0'
-						END AS percentage
-					FROM jaaromzet
-					RIGHT JOIN klant ON klant.klantid=jaaromzet.klantid;"
-			);
-		?>
-		
-		<!-- maak er een table van -->
-		<!--<input type="text" id="searchInput" onkeyup="searchFunction1()" placeholder="Typ de naam...">-->
-		<table id='resultTable'>
-			<thead>
-				<tr>
-					<td>ID</td>
-					<td>Naam</td>
-					<td>Jaaromzet</td>
-					<td>Korting</td>
-				</tr>
-			</thead>
-			<tbody>
-				<?php   while($row = $queryResult->fetch_assoc()): ?>
-				<tr>
-					<td><?php echo $row['klantid']; ?></td>
-					<td><?php echo $row['naam']; ?></td>
-					<td><?php echo $row['jaaromzet']; ?></td>
-					<td><?php echo $row['percentage']; ?></td>
-				</tr>
-				<?php endwhile;?>
-			</tbody>
-		</table>
-		
+		<h1> Welkom bij het Timaflu systeem!</h1>
+		<p> Gebruik het menu rechts om naar de gewenste pagina te navigeren</p>
 	</div>
 </body>
 </html>

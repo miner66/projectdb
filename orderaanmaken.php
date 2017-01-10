@@ -14,7 +14,10 @@
 	<script src='js/search.js'></script>
 	<script>
 		$(document).ready( function () {
-			$('#resultTable').DataTable();
+			$('#resultTable').DataTable({
+				paging: false,
+				scrollY: 400
+			});
 		} );
 	</script>
 	<?php

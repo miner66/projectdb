@@ -118,6 +118,7 @@ nav a {
 
 #outcomeTable{
 	width: 100%;
+	border-collapse: collapse;
 }
 
 #outcomeTable th{

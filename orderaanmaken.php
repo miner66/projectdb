@@ -8,7 +8,7 @@
 	<?php
 		include "include/functions.php"
 	?>
-	<script 
+	<script type="text/javascript" src="js/functions.js"></script>
 	<script type="text/javascript" src="js/jquery-2.2.4.js"></script>
 	<script type="text/javascript" src="js/datatables.js"></script>
 	<script src='js/search.js'></script>

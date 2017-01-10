@@ -120,12 +120,11 @@ nav a {
 	width: 100%;	
 }
 
-#outcomeTable thead{
-	border-bottom: 1px solid #000000;	
-}
-
 #outcomeTable th{
 	width: 25%;
 	text-align: left;
 }
 
+#tableHeaders{
+	border-bottom: 1px solid #000000;
+}

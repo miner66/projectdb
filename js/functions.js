@@ -13,7 +13,7 @@ function doCalc(){
 	//calculate the total cost of a line
 	for (i=0;i<numArt.length;i++){ 
 		if(numArt[i].value>0){
-			if(numArt[i].value>=minNum[i].innerText){
+			if(parseInt(numArt[i].value)>=parseInt(minNum[i].innerText)){
 				lineCost[i].innerHTML =parseFloat(numArt[i].value*linePrice[i].innerHTML).toFixed(2);
 			}else{
 				lineCost[i].innerHTML =parseFloat(minNum[i].innerText*linePrice[i].innerHTML).toFixed(2);

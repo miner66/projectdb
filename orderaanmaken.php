@@ -94,7 +94,7 @@
 				
 		<hr>
 		
-		<table>
+		<table id= 'outcomeTable'>
 			<thead>
 				<tr>
 					<th>Bestelcode</th>
@@ -115,6 +115,7 @@
 			$percentage = $percentage['percentage'];
 		?>
 		<div><span id='percentage'><?php echo $percentage; ?></span><span>%</span></div>
+		<hr id='calculationBar'>
 		<div><span>&euro;</span><span id='costWith'>0.00</span></div>
 	</div>
 </body>

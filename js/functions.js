@@ -18,6 +18,8 @@ function doCalc(){
 			}else{
 				lineCost[i].innerHTML =parseFloat(minNum[i].innerText*linePrice[i].innerHTML).toFixed(2);
 			}
+		}else{
+			lineCost[i].innerHTML =parseFloat(minNum[i].innerText*linePrice[i].innerHTML).toFixed(2);
 		}
 	}	
 	

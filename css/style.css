@@ -123,11 +123,13 @@ nav a {
 #outcomeTable th{
 	width: 25%;
 	text-align: left;
-	border-bottom: medium solid #000000;
+	border: 2px solid #000000;
+	margin: 0;
 }
 
 #outcomeTable td{
 	
-	border: thin solid #000000;
+	border: 1px solid #000000;
+	margin: 0;
 }
 

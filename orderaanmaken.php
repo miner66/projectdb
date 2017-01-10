@@ -15,6 +15,10 @@
 	<script>
 		$(document).ready( function () {
 			$('#resultTable').DataTable();
+		} );
+	</script>
+	<script>
+		$(document).ready( function () {
 			$('#orderLinesTable').DataTable();
 		} );
 	</script>

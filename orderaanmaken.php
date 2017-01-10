@@ -103,7 +103,7 @@
 					<th>Totaalprijs</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody id="orderLines">
 				
 			</tbody>
 		</table>

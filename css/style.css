@@ -118,13 +118,13 @@ nav a {
 
 #outcomeTable{
 	width: 100%;	
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 #outcomeTable th{
 	width: 25%;
 	text-align: left;
-	border-collapse: collapse;
-	border-spacing: 0;
 	border-bottom: 1px solid #000000;
 }
 

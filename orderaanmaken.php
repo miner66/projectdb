@@ -17,11 +17,6 @@
 			$('#resultTable').DataTable();
 		} );
 	</script>
-	<script>
-		$(document).ready( function () {
-			$('#orderLinesTable').DataTable();
-		} );
-	</script>
 	<?php
 		//vul de query in
 		$klant=1;
@@ -99,7 +94,7 @@
 				
 		<hr>
 		
-		<table id='orderLinesTable'>
+		<table>
 			<thead>
 				<tr>
 					<th>Bestelcode</th>

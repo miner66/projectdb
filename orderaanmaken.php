@@ -19,18 +19,13 @@
 	</script>
 	<?php
 		//vul de query in
-		$product_pid=1;
+		$klant=1;
 		if(isset($_GET["klant"])){
-			$product_pid=$_GET["klant"];
+			$klant=$_GET["klant"];
 		}
 		
 		$queryResult2 = getQuery(
-			"SELECT klant.klantid, klant.naam, 
-				CASE
-					WHEN jaaromzet.jaaromzet IS NULL THEN '0'
-					ELSE jaaromzet
-				END AS 'jaaromzet'
-				,
+			"SELECT
 				CASE
 					WHEN jaaromzet.jaaromzet < 10000 THEN '5'
 					WHEN jaaromzet.jaaromzet >= 10000 AND jaaromzet.jaaromzet<20000 THEN '10'
@@ -38,7 +33,8 @@
 					ELSE '0'
 				END AS percentage
 			FROM jaaromzet
-			RIGHT JOIN klant ON klant.klantid=jaaromzet.klantid;"
+			RIGHT JOIN klant ON klant.klantid=jaaromzet.klantid
+			WHERE klant.klantid=" . $klant . ";"
 		);
 	?>
 </head>
@@ -111,6 +107,11 @@
 				
 			</tbody>
 		</table>
+		
+		<hr>
+		<div><span>&euro;</span><span id='costWithout'>0.00</span></div>
+		<div><span id='percentage'><?php echo $result2; ?></span>%</div>
+		<div><span>&euro;</span><span id='costWith'>0.00</span></div>
 	</div>
 </body>
 </html>

@@ -96,7 +96,7 @@
 		
 		<table id= 'outcomeTable'>
 			<thead>
-				<tr>
+				<tr id='tableHeaders'>
 					<th>Bestelcode</th>
 					<th>Naam</th>
 					<th>Hoeveelheid</th>

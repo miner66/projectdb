@@ -120,6 +120,9 @@
 		<div><span id='percentage'><?php echo $percentage; ?></span><span>%</span></div>
 		<hr id='calculationBar'>
 		<div><span>&euro;</span><span id='costWith'>0.00</span></div>
+		
+		<div>Naam medewerker<input name="nameEmployee" type="text"></div>
+		<input type='button' onclick="alert('Order opgeslagen')" >
 	</div>
 </body>
 </html>

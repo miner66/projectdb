@@ -27,7 +27,7 @@
 		<?php
 			//vul de query in
 			$queryResult1 = getQuery(
-					"SELECT product.naam AS naamProduct, SUM(magazijn.hoeveelheid) AS Hoeveelheid, fabrikant.naam AS naamFabrikant, inkoopprijs.prijs
+					"SELECT product.naam AS naamProduct, SUM(magazijn.hoeveelheid) AS Hoeveelheid, fabrikant.naam AS naamFabrikant, inkoopprijs.prijs, fabrikant.telefoonnummer
 					FROM inkoopprijs
 					INNER JOIN
 						(SELECT productid, MAX(datum) AS MaxDateTime
@@ -62,6 +62,7 @@
 					<td>Hoeveelheid</td>
 					<td>Naam Fabrikant</td>
 					<td>Prijs</td>
+					<td>Telefoonnummer</td>
 				</tr>
 			</thead>
 			<tbody>
@@ -71,6 +72,7 @@
 					<td><?php echo $row1['Hoeveelheid']; ?></td>
 					<td><?php echo $row1['naamFabrikant']; ?></td>
 					<td><?php echo $row1['prijs']; ?></td>
+					<td><?php echo $row1['telefoonnummer']; ?></td>
 				</tr>
 				<?php endwhile;?>
 			</tbody>

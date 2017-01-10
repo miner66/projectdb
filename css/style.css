@@ -113,6 +113,11 @@ nav a {
 
 #calculationBar{
 	width: 200px;
+	margin: 0;
+}
+
+#outcomeTable{
+	width: 100%;	
 }
 
 #outcomeTable th{

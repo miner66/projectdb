@@ -24,8 +24,8 @@
 		?>
 	</header>
 	<div class='content'>
-		<h1> Welkom bij het Timaflu systeem!</h1>
-		<p> Gebruik het menu rechts om naar de gewenste pagina te navigeren</p>
+		<h1 id='welkomH1'> Welkom bij het Timaflu systeem!</h1>
+		<p id='welkomP'> Gebruik het menu rechts om naar de gewenste pagina te navigeren</p>
 	</div>
 </body>
 </html>

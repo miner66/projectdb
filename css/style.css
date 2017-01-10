@@ -127,3 +127,11 @@ nav a {
 	border-bottom: 1px solid #000000;
 }
 
+#welkomH1{
+	margin-top: 0px;
+	text-align: center;
+}
+
+#welkomP{
+	text-align: center;
+}

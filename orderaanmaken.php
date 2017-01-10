@@ -96,14 +96,14 @@
 		
 		<table id= 'outcomeTable'>
 			<thead>
-				<tr id='tableHeaders'>
+				<tr>
 					<th>Bestelcode</th>
 					<th>Naam</th>
 					<th>Hoeveelheid</th>
 					<th>Totaalprijs</th>
 				</tr>
 			</thead>
-			<tbody id='orderLines'>
+			<tbody>
 				
 			</tbody>
 		</table>

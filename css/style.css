@@ -120,16 +120,12 @@ nav a {
 	width: 100%;	
 }
 
+#outcomeTable thread{
+	border-bottom: 1px solid #000000;	
+}
+
 #outcomeTable th{
 	width: 25%;
 	text-align: left;
-	border: 2px solid #000000;
-	margin: 0;
-}
-
-#outcomeTable td{
-	
-	border: 1px solid #000000;
-	margin: 0;
 }
 

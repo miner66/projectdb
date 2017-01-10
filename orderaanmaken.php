@@ -15,6 +15,7 @@
 	<script>
 		$(document).ready( function () {
 			$('#resultTable').DataTable();
+			$('#orderLinesTable').DataTable();
 		} );
 	</script>
 	<?php
@@ -94,7 +95,7 @@
 				
 		<hr>
 		
-		<table>
+		<table id='orderLinesTable'>
 			<thead>
 				<tr>
 					<th>Bestelcode</th>

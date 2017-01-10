@@ -121,8 +121,13 @@ nav a {
 }
 
 #outcomeTable th{
-	width: 25%;	
+	width: 25%;
+	text-align: left;
+	border-bottom: medium none #000000;
 }
 
-
+#outcomeTable td{
+	
+	border: thin none #000000;
+}
 

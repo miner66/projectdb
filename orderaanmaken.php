@@ -110,7 +110,7 @@
 		
 		<hr>
 		<div><span>&euro;</span><span id='costWithout'>0.00</span></div>
-		<div><span id='percentage'><?php echo $result2; ?></span>%</div>
+		<div><span id='percentage'><?php echo $queryResult2; ?></span>%</div>
 		<div><span>&euro;</span><span id='costWith'>0.00</span></div>
 	</div>
 </body>

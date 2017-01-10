@@ -122,7 +122,7 @@
 		<div><span>&euro;</span><span id='costWith'>0.00</span></div>
 		
 		<div>Naam medewerker<input name="nameEmployee" type="text"></div>
-		<input type='button' onclick="alert('Order opgeslagen')" >
+		<input type='button' onclick="alert('Order opgeslagen')" value='Opslaan'>
 	</div>
 </body>
 </html>

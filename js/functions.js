@@ -28,7 +28,7 @@ function doCalc(){
 	for(i=0;i<numArt.length;i++){
 		if(numArt[i].value>0){
 			allLines+="<tr><td>" + bestelCode[i].innerHTML + "</td><td>" + prodNaam[i].innerHTML + "</td>";
-			if(numArt[i].value>=minNum[i].innerText){
+			if(parseInt(numArt[i].value)>=parseInt(minNum[i].innerText)){
 				allLines+="<td>" + numArt[i].value + "</td>";
 			}else{
 				allLines+="<td>" + minNum[i].innerText + "</td>";

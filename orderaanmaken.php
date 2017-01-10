@@ -81,7 +81,7 @@
 				<?php   while($row1 = $queryResult1->fetch_assoc()): ?>
 				<tr>
 					<td><span name='bestelCode'><?php echo $row1['bestelcode']; ?></span></td>
-					<td><span name='prodNaam'>Conce<?php echo $row1['naam']; ?>rta</span></td>
+					<td><span name='prodNaam'><?php echo $row1['naam']; ?></span></td>
 					<td><?php echo $row1['aantalperverpakking']; ?></td>
 					<td><span name='minNum'><?php echo $row1['minimaalaantal']; ?></span></td>
 					<td><input name="numArtikel" type="number" maxlength="3" class="amountField" placeholder='0' value='0' onkeyup="doCalc()"></td>
